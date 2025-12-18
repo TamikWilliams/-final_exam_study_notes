@@ -14,7 +14,11 @@
 - right click on document and convert to Pdf.
 
 # 1. How to compress (zip) a directory/folder in Debian. 
+- in tilx 
+- zip file1.zip file1.txt
+- unzip file1.zip
 - navigate to the folder amd right click on it.compress name and create it.
+- cd  into it in the terminal then hit zip
 
 # What are Absolute paths and relative paths? 
 
@@ -50,10 +54,31 @@ creating a file using an absolute path.)
   
 # How to append the output of a command to a file
 # example
-- ls -la > allmyfiles.lst
+- ls -la >> allmyfiles.lst
+- 
+    > To redirect the output of a command to a file. Essentially saving the output of a command to a file
+    >> to append (add) the output of a command to a file
+    | to pass the output of a command to another
 
-# How to use echo and output redirection to create a new file that contains some text
+Output redirection uses the file descriptors:
 
+    1 (STDOUT) Standard output = the regular output of a successfully executed command
+    2 (STDERR) Standard error = any error message returned by a command
+
+
+    Write an echo command that displays the following text “All files in my home directory”
+    Save the output of the echo command to a file called: file_report.txt
+    List all the files (including hidden but not the .. and .) in your home directory in a comma-separated format and append the output to the file_report.txt file
+    Display the content of the file_report.txt file
+# Example 
+- echo "all files in my home directory" > file_report.txt
+
+# How to use echo and output redirection to create a new file that contains same text
+# usage 
+- command output plus > plus file
+# save the output of a command to a file
+- ls -lA ~ > all-file-in-home.txt
+  
 # How to use wildcards (For copying and moving multiple files at the same time)
 
 # Move all files from one directory to another 
@@ -114,8 +139,20 @@ cat -n ~/Documents/sample_files/Code/helloWorld.py
 cat -A ~Documents/sample_file/Code/helloWorld.py
 
  # cp 
-# cut - 
-- The cut command is used to extract a specofic section of each line of a fiel and display it to the screen
+- copies files/directories from a source to a destination
+# The cp command kuses the same structure as the mv command
+- cp plus files to copy plus destination
+  # To copy a file
+- cp Downloads/wallpapers.zip Pictures/
+- 
+# To copy directories you must use the -r option
+- cp -r directory to copy plus destinatnion
+
+  # To copy a directory with absolute path
+  - cp -r ~/downloads/wallpapers ~/Pictures/
+  
+ # cut 
+- The cucpt command is used to extract a specofic section of each line of a fiel and display it to the screen
 # Usage 
 cut plus option plus file(s)
 
@@ -252,9 +289,6 @@ used for creating a single directory or multiple directories
   
   # To create a file using relative path (assumming you pwd is you home directory)
   - touch Downlowads/games2.txt
-  
-  
-
 # tr 
 - The tr command is used for translating or deleting characters from standard output
 
@@ -270,6 +304,13 @@ used for creating a single directory or multiple directories
 - 
 # Translate white space into tabs
 - cat file.py | tr "[:space:]" ' '
-- 
-o. tree 
+  
+ # tree 
+ # list all
+ - tree -a 
+ - 
+  # Real path shows the absolute path
+  # Example
+ - realpath kitchen/guest_room/attic/.key4 
+
 
